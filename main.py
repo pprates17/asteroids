@@ -18,6 +18,7 @@ def main():
     pos_x = SCREEN_WIDTH / 2
     pos_y = SCREEN_HEIGHT / 2
     player = Player(pos_x, pos_y)
+    dt = 0.0
 
     while True:
         log_state()
@@ -25,6 +26,8 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+
+        player.update(dt)
 
         screen.fill("black")
         player.draw(screen)
